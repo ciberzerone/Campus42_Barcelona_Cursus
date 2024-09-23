@@ -1,6 +1,6 @@
 # 💻📚 LIBFT 📚💻
 
-![Banner](https://github.com/DanielEspanadero/libft-42/blob/master/docs/banner%20libft.png)
+![Banner](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/libft/img/libft.png)
 
 > **NOTA**  
 > Este es el primer proyecto como estudiante de 42. Consiste en programar algunas funciones de la librería estándar de C, así como otras funciones que serán útiles a lo largo del cursus.
@@ -25,10 +25,6 @@ Libft se divide en 4 secciones:
 
 # Implementación de Funciones
 
-A continuación, se presentan algunas de las funciones más comunes implementadas en el proyecto **Libft**.
-
-## ft_is
-
 ### ft_isalnum
 **Descripción:** Comprueba si un carácter es alfanumérico (equivalente a `ft_isalpha` o `ft_isdigit`).
 
@@ -44,12 +40,11 @@ int	ft_isalnum(int c)
 	return (ft_isalpha(c) || ft_isdigit(c));
 }
 ```
-ft_isalpha
-Descripción: Comprueba si un carácter es alfabético (equivalente a ft_isupper o ft_islower).
+### ft_isalpha
+**Descripción:** Comprueba si un carácter es alfabético (equivalente a ft_isupper o ft_islower).
 
-Parámetro:
-
-c: El carácter a comprobar.
+**Parámetro:**
+- c: El carácter a comprobar.
 Valor de retorno:
 
 1 si el carácter es alfabético, 0 en caso contrario.
