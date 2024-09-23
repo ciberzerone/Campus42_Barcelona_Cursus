@@ -22,36 +22,6 @@ Libft se divide en 4 secciones:
 3. **Parte Bonus:** Funciones útiles para la manipulación de listas.
 4. **Funciones personales:** Funciones creadas para facilitar proyectos futuros.
 
----
-
-## Conceptos clave para completar Libft
-
-> **IMPORTANTE**  
-> A continuación, una serie de videos que te ayudarán a entender los conceptos básicos de Libft y sentar unas bases sólidas para futuros proyectos.
-
-### Punteros en C
-
-<a href='https://www.youtube.com/watch?v=y3K3jb3wv2I' target='_blank'>
-  <img width='30%' src='https://github.com/DanielEspanadero/libft-42/blob/master/docs/Punteros%20en%20c.jpg' alt='Punteros en C' />
-</a>
-
-### Struct en C
-
-<a href='https://www.youtube.com/watch?v=plTYF-btLuU' target='_blank'>
-  <img width='30%' src='https://github.com/DanielEspanadero/libft-42/blob/master/docs/estructuras%20en%20c.jpg' alt='Struct en C' />
-</a>
-
-### Makefile
-
-<a href='https://www.youtube.com/watch?v=BD0giwqBbm0' target='_blank'>
-  <img width='30%' src='https://github.com/DanielEspanadero/libft-42/blob/master/docs/makefile.png' alt='Makefile' />
-</a>
-
-### Listas enlazadas
-
-PRÓXIMAMENTE
-
----
 
 # Implementación de Funciones
 
