@@ -10,7 +10,7 @@ Este repositorio está destinado a recopilar y organizar todos los proyectos, ej
 
 La estructura del repositorio sigue un formato por proyecto y tema, con una carpeta por cada proyecto o conjunto de ejercicios.
 
-```plaintext
+``` plaintext
 .
 ├── Libft/                # Biblioteca personalizada en C
 ├── Get_Next_Line/        # Proyecto para leer líneas de archivos
@@ -18,9 +18,11 @@ La estructura del repositorio sigue un formato por proyecto y tema, con una carp
 ├── Born2beroot/          # Proyecto de configuración de servidor
 ├── So_Long/              # Pequeño videojuego en C
 ├── Minirt/               # Motor de raytracing básico
-└── ...
+└── 
+```
 
-Cada carpeta incluirá:
+
+## 📁 Cada carpeta incluirá:
 
 Código fuente (.c, .h, o de otro lenguaje según el ejercicio).
 Archivos Makefile (si corresponde).
