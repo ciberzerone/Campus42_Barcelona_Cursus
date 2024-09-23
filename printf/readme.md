@@ -1,3 +1,5 @@
+![image](https://github.com/DanielEspanadero/libft-42/blob/master/docs/banner%20libft.png)
+
 # ft_printf
 
 ## Descripción
