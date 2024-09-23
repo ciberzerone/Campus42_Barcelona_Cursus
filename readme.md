@@ -29,46 +29,57 @@ Archivos Makefile (si corresponde).
 Documentación del proyecto.
 Instrucciones de compilación y ejecución.
 
-🛠️ Herramientas y Tecnologías
+## 🛠️ Herramientas y Tecnologías
 A lo largo del curso se utilizan diversas herramientas y tecnologías. Las más frecuentes son:
 
-Lenguaje: C
-Compilador: gcc
-Herramientas: Make, Valgrind, GDB
-Sistema Operativo: Linux (Debian/Ubuntu)
-Entorno de trabajo: Terminal
+* Lenguaje: C
+* Compilador: gcc
+* Herramientas: Make, Valgrind, GDB
+* Sistema Operativo: Linux (Debian/Ubuntu)
+* Entorno de trabajo: Terminal
 
-🚀 Cómo Usar Este Repositorio
-1. Clonar el repositorio:
+## 🚀 Cómo Usar Este Repositorio
+### 1. Clonar el repositorio:
+
+``` c
 git clone git@github.com:<tu-usuario>/42-exercises.git
 
-2. Navegar al proyecto deseado:
+``` 
+### 2. Navegar al proyecto deseado:
 
+``` c
 cd <nombre-del-proyecto>
 
-3. Compilar el código (si aplica):
+``` 
 
+###  3. Compilar el código (si aplica):
+
+``` c
 make
+``` 
 
-4. Ejecutar el proyecto:
+### 4. Ejecutar el proyecto:
 
+``` c
 ./nombre_del_ejecutable
+``` 
 
-Proyectos Realizados
+
+## Proyectos Realizados
 Algunos de los proyectos que se encuentran aquí incluyen:
 
-Libft: Implementación de una biblioteca estándar en C.
-Get_Next_Line: Función para leer líneas de un descriptor de archivo.
-Printf: Reimplementación de la función printf.
-Born2beroot: Proyecto de configuración de un servidor Linux.
-So_Long: Videojuego en C usando la librería MLX.
+* Libft: Implementación de una biblioteca estándar en C.
+* Get_Next_Line: Función para leer líneas de un descriptor de archivo.
+* Printf: Reimplementación de la función printf.
+* Born2beroot: Proyecto de configuración de un servidor Linux.
 
 
- Notas
+
+## Notas
 Todos los proyectos están sujetos a cambios y mejoras continuas.
 Este repositorio no debe ser utilizado para copiar o hacer trampa en los ejercicios del Campus 42. Está destinado a ser un recurso de referencia y aprendizaje.
 Los proyectos aquí subidos son el resultado de mi trabajo y esfuerzo personal.
 
-🧑‍💻 Autor
-ciberzerone
-GitHub
+## 🧑‍💻 Autor
+<a href='https://github.com/ciberzerone/'>ciberzerone
+GitHub </a>
