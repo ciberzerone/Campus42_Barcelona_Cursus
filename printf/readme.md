@@ -1,4 +1,4 @@
-![image](https://github.com/DanielEspanadero/libft-42/blob/master/docs/banner%20libft.png)
+![image](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/printf/img/bannesup.png)
 
 # ft_printf
 
