@@ -1,43 +1,75 @@
-char *get_next_line(int fd) {
-    static char *remainder = NULL;
-    char buffer[BUFFER_SIZE + 1];
-    char *newline_pos;
-    char *line;
-    int bytes_read;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybeltran <ybeltran@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/24 17:50:13 by ybeltran          #+#    #+#             */
+/*   Updated: 2024/09/24 18:49:07 by ybeltran         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "get_next_line.h"
+#include <stdlib.h>
+#include <unistd.h>
 
-    if (fd < 0 || BUFFER_SIZE <= 0) {
-        return NULL;
-    }
+static char	*ft_update_remainder(char *remainder, char *buffer)
+{
+	char	*temp;
 
-    // Limpiar el buffer antes de leer
-    memset(buffer, 0, BUFFER_SIZE + 1);
+	if (!remainder)
+		remainder = ft_strdup(buffer);
+	else
+	{
+		temp = ft_strjoin(remainder, buffer);
+		free(remainder);
+		remainder = temp;
+	}
+	return (remainder);
+}
 
-    // Leer hasta encontrar una nueva línea o el final del archivo
-    while ((bytes_read = read(fd, buffer, BUFFER_SIZE)) > 0) {
-        buffer[bytes_read] = '\0';
-        remainder = ft_strjoin(remainder, buffer);  // Concatenar el buffer leído al restante
+static char	*ft_extract_line(char **remainder)
+{
+	char	*line;
+	char	*newline_pos;
+	char	*temp;
 
-        // Verificar si encontramos un salto de línea en lo que hemos leído
-        if ((newline_pos = ft_strchr(remainder, '\n'))) {
-            *newline_pos = '\0';  // Terminar la línea
-            line = ft_strdup(remainder);  // Copiar la línea completa
+	newline_pos = ft_strchr(*remainder, '\n');
+	if (newline_pos)
+	{
+		*newline_pos = '\0';
+		line = ft_strdup(*remainder);
+		temp = ft_strdup(newline_pos + 1);
+		free(*remainder);
+		*remainder = temp;
+	}
+	else
+	{
+		line = ft_strdup(*remainder);
+		free(*remainder);
+		*remainder = NULL;
+	}
+	return (line);
+}
 
-            // Mover el contenido restante al inicio de `remainder`
-            char *temp = ft_strdup(newline_pos + 1);  // Lo que queda después del '\n'
-            free(remainder);
-            remainder = temp;
+char	*get_next_line(int fd)
+{
+	static char	*remainder;
+	char		buffer[BUFFER_SIZE + 1];
+	int			bytes_read;
 
-            return line;
-        }
-    }
-
-    // Si llegamos al final del archivo o no hay más contenido
-    if (remainder && *remainder) {
-        line = ft_strdup(remainder);  // Copiar lo que queda
-        free(remainder);
-        remainder = NULL;
-        return line;
-    }
-
-    return NULL;  // Nada más que leer
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	bytes_read = read(fd, buffer, BUFFER_SIZE);
+	while (bytes_read > 0)
+	{
+		buffer[bytes_read] = '\0';
+		remainder = ft_update_remainder(remainder, buffer);
+		if (ft_strchr(remainder, '\n'))
+			return (ft_extract_line(&remainder));
+		bytes_read = read(fd, buffer, BUFFER_SIZE);
+	}
+	if (remainder && *remainder)
+		return (ft_extract_line(&remainder));
+	return (NULL);
 }

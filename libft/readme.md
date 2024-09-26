@@ -2,8 +2,6 @@
 
 ![Banner](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/libft/img/libft.png)
 
-> **NOTA**  
-> Este es el primer proyecto como estudiante de 42. Consiste en programar algunas funciones de la librería estándar de C, así como otras funciones que serán útiles a lo largo del cursus.
 
 ## ¿Qué es Libft?
 
@@ -12,15 +10,6 @@ Programar en C puede ser complicado cuando no se tiene acceso a las funciones m�
 En **42**, no se nos permite usar algunas bibliotecas estándar en nuestros proyectos, por lo que tenemos que crear nuestra propia biblioteca, que será muy útil en los siguientes proyectos de C.
 
 ---
-
-## ¿En qué consiste?
-
-Libft se divide en 4 secciones:
-
-1. **Funciones de Libc:** Implementación de funciones estándar de la biblioteca C.
-2. **Funciones adicionales:** Funciones adicionales que serán útiles en proyectos posteriores.
-3. **Parte Bonus:** Funciones útiles para la manipulación de listas.
-4. **Funciones personales:** Funciones creadas para facilitar proyectos futuros.
 
 
 # Implementación de Funciones

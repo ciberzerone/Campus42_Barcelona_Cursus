@@ -9,7 +9,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -D BUFFER_SIZE=42 -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
