@@ -6,7 +6,7 @@
 /*   By: ybeltran <ybeltran@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 17:12:12 by ybeltran          #+#    #+#             */
-/*   Updated: 2024/09/24 18:53:08 by ybeltran         ###   ########.fr       */
+/*   Updated: 2024/09/26 18:09:40 by ybeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	strcpy(joined, s1);
 	strcat(joined, s2);
 	return (joined);
-}
-
-char	*ft_strcpy(char *dest, const char *src)
-{
-	char	*ptr;
-
-	ptr = dest;
-	while (*src)
-	{
-		*ptr++ = *src++;
-	}
-	*ptr = '\0';
-	return (dest);
 }
 
 size_t	ft_strlen(const char *s)

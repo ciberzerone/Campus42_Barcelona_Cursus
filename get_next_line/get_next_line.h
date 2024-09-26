@@ -6,7 +6,7 @@
 /*   By: ybeltran <ybeltran@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 18:55:14 by ybeltran          #+#    #+#             */
-/*   Updated: 2024/09/24 18:55:29 by ybeltran         ###   ########.fr       */
+/*   Updated: 2024/09/26 18:10:38 by ybeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
-char	*ft_strcpy(char *dest, const char *src);
 
 #endif
