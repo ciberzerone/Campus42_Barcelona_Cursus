@@ -26,6 +26,8 @@ Antes de comenzar, asegúrate de tener lo siguiente:
 - ISO de **Rocky Linux 9.4** o **Debian**.
 - Conocimiento básico de administración de servidores y comandos de terminal.
 
+![BRocky](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/rocky_minimal.png)
+
 ## Configuración del Entorno
 
 ### Paso 1: Crear una Máquina Virtual en VirtualBox
@@ -59,14 +61,15 @@ Durante la instalación del sistema operativo, selecciona la opción de **Partic
   ```plaintext
 NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda             8:0    0   20G  0 disk
-├─sda1          8:1    0  500M  0 part /boot
-├─sda2          8:2    0 19.5G  0 part
+├─sda1          8:1    0  512M  0 part /boot (minino rocky)
+├─sda2          8:2    0    1k  0 part 
+└─sda5          8:3   0 19.5G  0 part
   └─lvm_crypt  254:0    0 19.5G  0 crypt
-    ├─root     254:1    0    8G  0 lvm  /
-    ├─swap     254:2    0    1G  0 lvm  [SWAP]
-    └─home     254:3    0 10.5G  0 lvm  /home
+    ├─root     254:1    0   2.8G 0 lvm  /
+    ├─swap     254:2    0    976 0 lvm  [SWAP]
+    └─home     254:3    0   3.8G 0 lvm  /home
   ```
-
+![particiones](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/particiones.png)
 ## Instalación del Sistema
 
 ### Paso 3: Instalar Rocky 
