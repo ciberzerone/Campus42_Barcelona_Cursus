@@ -87,8 +87,8 @@ sda             8:0    0   20G  0 disk
     sestatus
     ```
 
-![Estado de SELinux](https://user-images.githubusercontent.com/XXX/selinux_status.png)
-![Estado de SELinux](https://user-images.githubusercontent.com/XXX/setstatus2.png)
+![Estado de SELinux](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/setstatus.png)
+![Estado de SELinux](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/setstatus.png)
 
 
 ### Paso 5: Configuración de Firewall
