@@ -49,7 +49,7 @@ Antes de comenzar, asegúrate de tener lo siguiente:
 
 Durante la instalación del sistema operativo, selecciona la opción de **Particionado Manual** y realiza las siguientes configuraciones:
 
-1. **/boot**: Partición primaria no cifrada, tamaño 500 MB, formato `ext4`.
+1. **/boot**: Partición primaria no cifrada, tamaño 512 MB, formato `ext4`.
 2. **Volumen LVM cifrado**:
     - Crear un grupo de volúmenes LVM.
 ### Estructura de particiones:
@@ -88,6 +88,8 @@ sda             8:0    0   20G  0 disk
     ```
 
 ![Estado de SELinux](https://user-images.githubusercontent.com/XXX/selinux_status.png)
+![Estado de SELinux](https://user-images.githubusercontent.com/XXX/setstatus2.png)
+
 
 ### Paso 5: Configuración de Firewall
 
