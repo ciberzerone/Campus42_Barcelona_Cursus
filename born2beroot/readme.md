@@ -1,6 +1,6 @@
 # Born2beRoot - Guía de Configuración
 
-![Born2beRoot](https://user-images.githubusercontent.com/XXX/Born2beRoot_logo.png)
+![Born2beRoot](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/cabezeraBorn.png)
 
 Este proyecto te guiará en la configuración de un servidor utilizando **VirtualBox** con **Rocky Linux** o **Debian**, siguiendo reglas estrictas de seguridad y buenas prácticas de administración de sistemas. A lo largo del proceso, aprenderás a configurar particiones cifradas, gestionar usuarios, activar y configurar servicios clave como **SSH** y **SELinux**, y crear scripts para monitorear tu sistema.
 
