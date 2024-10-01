@@ -64,7 +64,7 @@ sda             8:0    0   20G  0 disk
     ├─swap     254:2    0    976 0 lvm  [SWAP]
     └─home     254:3    0   3.8G 0 lvm  /home
   ```
-![particiones](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/particiones.png)
+![particiones](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/particiones2.png)
 ## Instalación del Sistema
 
 ### Paso 3: Instalar Rocky 
