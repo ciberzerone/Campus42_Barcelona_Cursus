@@ -39,7 +39,7 @@ Antes de comenzar, asegúrate de tener lo siguiente:
 
 2. **Configurar la red** como NAT para acceso a internet, y habilitar la red host-only para gestionar conexiones SSH.
 
-![Configuración de la red](https://user-images.githubusercontent.com/XXX/network_settings.png)
+![Configuración de la red](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/virtualB2b.png)
 
 ## Particionado y Cifrado de Disco
 
