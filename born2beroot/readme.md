@@ -52,12 +52,7 @@ Durante la instalación del sistema operativo, selecciona la opción de **Partic
 1. **/boot**: Partición primaria no cifrada, tamaño 500 MB, formato `ext4`.
 2. **Volumen LVM cifrado**:
     - Crear un grupo de volúmenes LVM.
-    - Dentro del LVM, crear:
-        - `/` (root): 8 GB, formato `xfs`.
-        - `/home`: 4 GB, formato `xfs`.
-        - `swap`: 1 GB.
-
-### Ejemplo de estructura de particiones:
+### Estructura de particiones:
   ```plaintext
 NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda             8:0    0   20G  0 disk
