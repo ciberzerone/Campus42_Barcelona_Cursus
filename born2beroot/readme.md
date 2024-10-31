@@ -253,3 +253,39 @@ sda             8:0    0   20G  0 disk
     ├─root     254:1   0   2.8G 0 lvm /
     ├─swap     254:2   0   976M 0 lvm [SWAP]
     └─home     254:3   0   3.8G 0 lvm /home
+
+---
+
+## 4. Instalación del Sistema
+
+### Paso 3: Instalar el Sistema Operativo
+
+1. Selecciona la instalación mínima (sin interfaz gráfica) para optimizar el rendimiento del servidor.
+2. Completa la instalación asegurándote de que el disco cifrado se monte correctamente al inicio.
+
+> **Consejo:** Utiliza Debian si tienes experiencia previa con esta distribución o si es un requisito de tu campus.
+
+---
+
+## 5. Configuración de SELinux y Firewall
+
+### Paso 4: Configuración de SELinux
+
+1. Activa SELinux y establece el modo **enforcing**:
+   ```bash
+   sudo setenforce 1
+   sudo sed -i 's/SELINUX=permissive/SELINUX=enforcing/' /etc/selinux/config
+   ```
+2. Verifica el estado:
+   ```bash
+    sestatus
+   ```
+Paso 5: Configuración de Firewall
+
+1. Habilita firewalld y abre el puerto 4242 para SSH:
+```bash
+sudo firewall-cmd --permanent --add-port=4242/tcp
+sudo firewall-cmd --reload
+sudo systemctl enable firewalld
+sudo systemctl start firewalld
+  ```
