@@ -23,7 +23,7 @@ Este proyecto te guiará en la configuración de un servidor utilizando **Virtua
 Antes de comenzar, asegúrate de tener lo siguiente:
 
 - **VirtualBox** instalado en tu máquina local.
-- ISO de **Debian**.
+- <a href="https://www.debian.org/distrib/index.es.html">ISO de **Debian**</a>.
 - Conocimiento básico de administración de servidores y comandos de terminal.
 
 ![BRocky](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/debian.png)
