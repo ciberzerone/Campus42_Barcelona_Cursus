@@ -2,7 +2,7 @@
 
 ![Born2beRoot](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/cabezeraBorn.png)
 
-Este proyecto te guiará en la configuración de un servidor utilizando **VirtualBox** con **Rocky Linux** o **Debian**, siguiendo reglas estrictas de seguridad y buenas prácticas de administración de sistemas. A lo largo del proceso, aprenderás a configurar particiones cifradas, gestionar usuarios, activar y configurar servicios clave como **SSH** y **SELinux**, y crear scripts para monitorear tu sistema.
+Este proyecto te guiará en la configuración de un servidor utilizando **VirtualBox** con **Debian**, siguiendo reglas estrictas de seguridad y buenas prácticas de administración de sistemas. A lo largo del proceso, aprenderás a configurar particiones cifradas, gestionar usuarios, activar y configurar servicios clave como **SSH** y **SELinux**, y crear scripts para monitorear tu sistema.
 
 ## Tabla de Contenidos
 
@@ -23,10 +23,10 @@ Este proyecto te guiará en la configuración de un servidor utilizando **Virtua
 Antes de comenzar, asegúrate de tener lo siguiente:
 
 - **VirtualBox** instalado en tu máquina local.
-- ISO de **Rocky Linux 9.4** o **Debian**.
+- ISO de **Debian**.
 - Conocimiento básico de administración de servidores y comandos de terminal.
 
-![BRocky](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/rocky_minimal.png)
+![BRocky](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/debian.png)
 
 ## Configuración del Entorno
 
