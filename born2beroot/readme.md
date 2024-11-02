@@ -39,142 +39,9 @@ Antes de comenzar, asegúrate de tener lo siguiente:
     - **RAM**: Al menos 2 GB
     - **Disco duro virtual**: 20 GB (preferiblemente en formato VDI)
 
-2. **Configurar la red** como NAT para acceso a internet, y habilitar la red host-only para gestionar conexiones SSH.
-
-![Configuración de la red](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/virtualB2b.png)
-
-## Particionado y Cifrado de Disco
-
-### Paso 2: Particionado Manual
-
-Durante la instalación del sistema operativo, selecciona la opción de **Particionado Manual** y realiza las siguientes configuraciones:
-
-1. **/boot**: Partición primaria no cifrada, tamaño 512 MB, formato `ext4`.
-2. **Volumen LVM cifrado**:
-    - Crear un grupo de volúmenes LVM.
-### Estructura de particiones:
-  ```plaintext
-NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-sda             8:0    0   20G  0 disk
-├─sda1          8:1    0  512M  0 part /boot (minino rocky)
-├─sda2          8:2    0    1k  0 part 
-└─sda5          8:3   0 19.5G  0 part
-  └─lvm_crypt  254:0    0 19.5G  0 crypt
-    ├─root     254:1    0   2.8G 0 lvm  /
-    ├─swap     254:2    0    976 0 lvm  [SWAP]
-    └─home     254:3    0   3.8G 0 lvm  /home
-  ```
-![particiones](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/particiones2.png)
-## Instalación del Sistema
-
-### Paso 3: Instalar Rocky 
-
-1. Selecciona la instalación mínima (sin interfaz gráfica) para optimizar el uso del servidor.
-2. Sigue las instrucciones para completar la instalación, asegurándote de que el disco cifrado se monte correctamente al inicio.
-
-## Configuración de SELinux y Firewall
-
-### Paso 4: Configuración de SELinux
-
-1. **Activar SELinux** y establecerlo en modo **enforcing**:
-    ```bash
-    sudo setenforce 1
-    sudo sed -i 's/SELINUX=permissive/SELINUX=enforcing/' /etc/selinux/config
-    ```
-
-2. Verifica el estado:
-    ```bash
-    sestatus
-    ```
-
-![Estado de SELinux](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/setstatus.png)
-![Estado de SELinux](https://github.com/ciberzerone/Campus42_Barcelona_Cursus/blob/main/born2beroot/img/setstatus.png)
 
 
-### Paso 5: Configuración de Firewall
 
-1. Habilitar **firewalld** y abrir el puerto 4242 para SSH:
-    ```bash
-    sudo firewall-cmd --permanent --add-port=4242/tcp
-    sudo firewall-cmd --reload
-    sudo systemctl enable firewalld
-    sudo systemctl start firewalld
-    ```
-
-## Gestión de Usuarios y Políticas de Contraseña
-
-### Paso 6: Crear Usuarios y Configurar Políticas
-
-1. **Crear un usuario con tu login** (por ejemplo, `ybeltran42`) y asignarlo a los grupos `user42` y `sudo`:
-    ```bash
-    sudo useradd -m -G sudo,user42 ybeltran42
-    sudo passwd ybeltran42
-    ```
-
-2. **Configurar políticas de contraseña**:
-    - Contraseña de mínimo 10 caracteres.
-    - Expiración cada 30 días.
-    - Aviso de 7 días antes de expirar.
-
-    Edita el archivo `/etc/login.defs`:
-    ```bash
-    PASS_MAX_DAYS 30
-    PASS_MIN_DAYS 2
-    PASS_WARN_AGE 7
-    ```
-
-## Configuración de SSH
-
-### Paso 7: Configurar SSH en Puerto 4242
-
-1. Modifica la configuración de **SSH** para ejecutar en el puerto 4242:
-    ```bash
-    sudo sed -i 's/#Port 22/Port 4242/' /etc/ssh/sshd_config
-    sudo systemctl restart sshd
-    ```
-
-2. **Deshabilitar login root** vía SSH:
-    ```bash
-    sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
-    sudo systemctl restart sshd
-    ```
-
-## Creación del Script `monitoring.sh`
-
-### Paso 8: Crear el Script de Monitoreo
-
-Crea un script llamado `monitoring.sh` que muestre información importante del sistema cada 10 minutos usando `cron`. El script debe mostrar:
-
-- Arquitectura y versión del kernel
-- Número de CPUs físicas y virtuales
-- Uso de memoria RAM y núcleos
-- Número de conexiones activas y usuarios
-- Estado de LVM y uso de `sudo`
-
-```bash
-#!/bin/bash
-echo "#Architecture: $(uname -a)"
-echo "#CPU physical: $(nproc --all)"
-echo "#Memory Usage: $(free -m | grep Mem | awk '{print $3}')MB"
-# Más líneas de monitoreo...
-```
-
-## Verificación y Evaluación Final
-### Paso 9: Verificación y Documentación
-1. Verifica que SELinux esté activo, el firewall esté configurado correctamente, y el servicio SSH esté corriendo en el puerto 4242.
-2. Prueba el acceso SSH desde otra máquina para asegurarte de que todo esté funcionando.
-3. Crea el archivo signature.txt en la raíz del proyecto, incluyendo la firma del disco virtual (VMDK o VDI).
-
-```bash
-md5sum /path/to/disk.vdi > signature.txt
-```
-4. Entrega el proyecto incluyendo el archivo signature.txt en el repositorio según las instrucciones proporcionadas.
-
-### Autor
-**Nombre:** Ybeltran
-**Proyecto:** Born2beRoot
-**Contacto:** gianmarcobeltran@gmail.com
-**Institución:** 42 Network
 
 
 # Born2beRoot - Guía de Configuración y Seguridad
@@ -195,7 +62,6 @@ Este proyecto proporciona una guía paso a paso para configurar y asegurar un se
 8. [Creación del Script de Monitoreo (`monitoring.sh`)](#creación-del-script-de-monitoreo-monitoringsh)
 9. [Automatización del Monitoreo con Crontab](#automatización-del-monitoreo-con-crontab)
 10. [Generación del Archivo `signature.txt`](#generación-del-archivo-signaturetxt)
-11. [Pruebas y Verificación Final](#pruebas-y-verificación-final)
 12. [Autor](#autor)
 
 ---
@@ -253,7 +119,7 @@ sda             8:0    0   20G  0 disk
     ├─root     254:1   0   2.8G 0 lvm /
     ├─swap     254:2   0   976M 0 lvm [SWAP]
     └─home     254:3   0   3.8G 0 lvm /home
-
+```
 ---
 
 ## 4. Instalación del Sistema
@@ -289,3 +155,10 @@ sudo firewall-cmd --reload
 sudo systemctl enable firewalld
 sudo systemctl start firewalld
   ```
+
+
+### Autor
+**Nombre:** Ybeltran
+**Proyecto:** Born2beRoot
+**Contacto:** gianmarcobeltran@gmail.com
+**Institución:** 42 Network
